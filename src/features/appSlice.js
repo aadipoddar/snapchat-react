@@ -26,6 +26,6 @@ export const { login, logout, selectImage, resetImage } = appSlice.actions;
 
 export const selectuser = (state) => state.app.user;
 
-export const selectSelectImage = (state) => state.app.selectedImage;
+export const selectSelectedImage = (state) => state.app.selectedImage;
 
 export default appSlice.reducer;
