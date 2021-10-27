@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef } from 'react'
+import { useCallback, useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import Webcam from 'react-webcam'
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
