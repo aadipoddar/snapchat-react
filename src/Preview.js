@@ -53,7 +53,7 @@ function Preview() {
                 .then((url) => {
                     db.collection('posts').add({
                         imageUrl: url,
-                        username: 'Aadi Poddar',
+                        username: user.username,
                         read: false,
                         profilePic: user.profilePic,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
