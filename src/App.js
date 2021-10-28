@@ -42,27 +42,37 @@ function App() {
           <Login />
         ) : (
 
-          <div className="app__body">
-            <Switch>
+          <>
+            <img
+              className="app__logo"
+              src="https://images.unsplash.com/photo-1611162617263-4ec3060a058e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+              alt=""
+            />
 
-              <Route path="/chats/view">
-                <ChatView />
-              </Route>
+            <div className="app__body">
+              <div className="app__bodyBackground">
+                <Switch>
 
-              <Route path="/chats">
-                <Chats />
-              </Route>
+                  <Route path="/chats/view">
+                    <ChatView />
+                  </Route>
 
-              <Route path="/preview">
-                <Preview />
-              </Route>
+                  <Route path="/chats">
+                    <Chats />
+                  </Route>
 
-              <Route exact path="/">
-                <WebcamCapture />
-              </Route>
+                  <Route path="/preview">
+                    <Preview />
+                  </Route>
 
-            </Switch>
-          </div>
+                  <Route exact path="/">
+                    <WebcamCapture />
+                  </Route>
+
+                </Switch>
+              </div>
+            </div>
+          </>
         )}
 
       </Router>

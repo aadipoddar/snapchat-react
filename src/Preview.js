@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { resetCameraImage, selectCameraImage } from './features/cameraSlice'
 import { v4 as uuid } from 'uuid'
-import { db, storage } from './firebase'
 import firebase from 'firebase'
+import { resetCameraImage, selectCameraImage } from './features/cameraSlice'
+import { db, storage } from './firebase'
+import { selectUser } from './features/appSlice'
 import './Preview.css'
 
 
@@ -24,6 +25,7 @@ function Preview() {
     const cameraImage = useSelector(selectCameraImage)
     const history = useHistory();
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
 
     useEffect(() => {
         if (!cameraImage) {
@@ -53,7 +55,7 @@ function Preview() {
                         imageUrl: url,
                         username: 'Aadi Poddar',
                         read: false,
-                        //profile Pic
+                        profilePic: user.profilePic,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     });
                     history.replace('/chats');
